@@ -1,4 +1,4 @@
-For this project I'm using Camunda 8 and gRPC client to connect and create an instance process. This a basic expense report process but it includes a service task to send a email notification, this service can executed outside camunda engine.
+For this project I'm using Camunda 8 and gRPC client to connect and create an instance process. This basic expense report process, created and instance and the send typed expense information to camunda and pre-load this data into a user review task.
 
 **Camunda BPM Model/Diagram**
 
