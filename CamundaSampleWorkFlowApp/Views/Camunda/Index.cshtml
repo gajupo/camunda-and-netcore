@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Index";
+
+    long _processInstanceKey = 0;
+    if (TempData["_processInstanceKey"] is string valueAsString)
+    {
+        long.TryParse(valueAsString, out _processInstanceKey);
+    }
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 align-items-center">
+            <h2>Actions</h2>
+            <a href="@Url.Action("StartInstance", "Camunda", new {bpmnProcessId = "Process_ExpenseReimbursement-1iuadlv"})" class="btn btn-primary">Start Expense Reimbursement Process</a>
+            <a href="@Url.Action("SetInstanceVariables", "Camunda", new {_processInstanceKey = @_processInstanceKey})" class="btn btn-primary">Send Expenses</a>
+            <a href="@Url.Action("SendMessage", "Camunda")" class="btn btn-primary">Approve Expenses</a>
+        </div>
+    </div>
+</div>

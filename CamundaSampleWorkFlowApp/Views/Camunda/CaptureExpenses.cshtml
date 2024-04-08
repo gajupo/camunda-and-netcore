@@ -1,0 +1,85 @@
+﻿@model CamundaSampleWorkFlowApp.Models.Expense
+
+@{
+    ViewData["Title"] = "Send Expense Information";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="firstName">First Name</label>
+        <input asp-for="firstName" class="form-control" />
+        <span asp-validation-for="firstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="lastName">Last Name</label>
+        <input asp-for="lastName" class="form-control" />
+        <span asp-validation-for="lastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="email">Email</label>
+        <input asp-for="email" type="email" class="form-control" />
+        <span asp-validation-for="email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="deparment">Department</label>
+        <input asp-for="deparment" class="form-control" />
+        <span asp-validation-for="deparment" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="supervisorEmail">Supervisor Email</label>
+        <input asp-for="supervisorEmail" type="email" class="form-control" />
+        <span asp-validation-for="supervisorEmail" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="expenseDate">Expense Date</label>
+        <input asp-for="expenseDate" type="date" class="form-control" />
+        <span asp-validation-for="expenseDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="expenseType">Expense Type</label>
+        <select asp-for="expenseType" asp-items="Html.GetEnumSelectList<ExpenseType>()" class="form-control"></select>
+        <span asp-validation-for="expenseType" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="travelStart">Travel Start Date</label>
+        <input asp-for="travelStart" type="date" class="form-control" />
+        <span asp-validation-for="travelStart" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="travelEnd">Travel End Date</label>
+        <input asp-for="travelEnd" type="date" class="form-control" />
+        <span asp-validation-for="travelEnd" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="travelLocation">Travel Location</label>
+        <input asp-for="travelLocation" class="form-control" />
+        <span asp-validation-for="travelLocation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="expensePurpose">Expense Purpose</label>
+        <textarea asp-for="expensePurpose" class="form-control"></textarea>
+        <span asp-validation-for="expensePurpose" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="expenseAmount">Expense Amount</label>
+        <input asp-for="expenseAmount" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="expenseAmount" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
